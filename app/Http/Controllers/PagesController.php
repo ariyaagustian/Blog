@@ -8,16 +8,26 @@ class PagesController extends Controller
 {
      public function getIndex()
     {
-      return view('pages/welcome');
-
+      return view('pages.welcome');
     }
+
     public function getAbout()
     {
-      return view('pages/about');
+      $fist = 'Ariya';
+      $last = 'Agustian';
+      $email = 'ariyaagustian@gmail.com';
+      $fullname = $fist ." ". $last;
+
+      $data = [];
+      $data['email'] = $email;
+      $data['fullname'] = $fullname;
+
+      return view('pages.about')->withData($data);
     }
+
     public function getContact()
     {
-        return view('pages/contact');
+        return view('pages.contact');
     }
 
 
